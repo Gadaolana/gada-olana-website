@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Video Chat</title>
+</head>
+<body>
+    <h1>Offline Video Chat</h1>
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const localVideo = document.getElementById('localVideo');
+        const remoteVideo = document.getElementById('remoteVideo');
+
+        let localStream;
+        let peerConnection;
+
+        const config = {
+            iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+        };
+
+        // Get user media (camera and microphone)
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(stream => {
+                localStream = stream;
+                localVideo.srcObject = stream;
+            });
+
+        // Handle offer from another peer
+        socket.on('offer', (offer) => {
+            peerConnection = new RTCPeerConnection(config);
+            peerConnection.addStream(localStream);
+            peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
+
+            peerConnection.createAnswer().then(answer => {
+                peerConnection.setLocalDescription(answer);
+                socket.emit('answer', answer);
+            });
+
+            peerConnection.onaddstream = event => {
+                remoteVideo.srcObject = event.stream;
+            };
+        });
+
+        // Handle answer from another peer
+        socket.on('answer', (answer) => {
+            peerConnection.setRemoteDescription(new RTCSessionDescription(answer));
+        });
+
+        // Handle ICE candidate
+        socket.on('candidate', (candidate) => {
+            const iceCandidate = new RTCIceCandidate(candidate);
+            peerConnection.addIceCandidate(iceCandidate);
+        });
+
+        // Create offer when ready
+        socket.on('connect', () => {
+            peerConnection = new RTCPeerConnection(config);
+            peerConnection.addStream(localStream);
+
+            peerConnection.onicecandidate = event => {
+                if (event.candidate) {
+                    socket.emit('candidate', event.candidate);
+                }
+            };
+
+            peerConnection.createOffer().then(offer => {
+                peerConnection.setLocalDescription(offer);
+                socket.emit('offer', offer);
+            });
+
+            peerConnection.onaddstream = event => {
+                remoteVideo.srcObject = event.stream;
+            };
+        });
+    </script>
+</body>
+</html>
