@@ -37,8 +37,18 @@ main {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #a60ac5;
+    font-size: 2.5rem;
 }
+
+
+.new_title {
+    font-family: 'Playfair Display', serif;
+    color: #a60ac5;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
 
 .animated-button {
     display: inline-block;
