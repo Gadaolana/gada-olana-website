@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Physiology</title>
+    <title>Human Anatomy</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Google AdSense Code -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8876183815276838" crossorigin="anonymous"></script>
+    <style>
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="anatomy.html">Anatomy</a></li>
@@ -23,21 +32,65 @@
         </nav>
     </header>
 
-    <main>
-        <section id="physiology">
-            <h2>Human Physiology</h2>
-            <p>Human physiology is the scientific study of the functions and mechanisms in a human body. It includes the study of how organs and systems work together to sustain life.</p>
-            <h3>Homeostasis</h3>
-            <p>Homeostasis is the body's ability to maintain a stable internal environment despite changes in external conditions. It involves various feedback mechanisms to regulate temperature, pH, and other vital parameters.</p>
-            <h3>Cell Function</h3>
-            <p>Cells are the basic units of life. They perform essential functions such as energy production, waste removal, and reproduction. Specialized cells form tissues and organs, each with specific roles.</p>
-            <h3>Organ Systems</h3>
-            <p>Organ systems, such as the cardiovascular, respiratory, and digestive systems, work together to ensure the body's proper functioning. Each system has unique physiological processes that contribute to overall health.</p>
+    <main class="site-main">
+        <section class="hero-section">
+            <h1 class="new_title">Human Anatomy</h1>
+            <p class="hero-text">Explore the intricate structures that make up the human body and learn about the complex relationships between different anatomical systems.</p>
+            <div class="image-container">
+                <img src="https://example.com/images/human-anatomy-overview.jpg" alt="Human Anatomy Overview" />
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="new_title">Major Body Systems</h2>
+            <ul>
+                <li>Skeletal System: Provides structure, support, and protection for the body</li>
+                <li>Muscular System: Enables movement and maintains posture</li>
+                <li>Nervous System: Controls and coordinates body functions</li>
+                <li>Cardiovascular System: Transports blood, oxygen, and nutrients throughout the body</li>
+                <li>Respiratory System: Facilitates gas exchange between the body and the environment</li>
+                <li>Digestive System: Breaks down food and absorbs nutrients</li>
+                <li>Endocrine System: Produces hormones that regulate various bodily functions</li>
+                <li>Immune System: Defends the body against pathogens and foreign substances</li>
+            </ul>
+            <div class="image-container">
+                <img src="https://example.com/images/body-systems.jpg" alt="Major Body Systems" />
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="new_title">Levels of Organization</h2>
+            <p>Human anatomy can be studied at various levels of organization, from the smallest to the largest:</p>
+            <ol>
+                <li>Cellular level: Individual cells and their components</li>
+                <li>Tissue level: Groups of similar cells working together</li>
+                <li>Organ level: Structures composed of different tissues with specific functions</li>
+                <li>Organ system level: Groups of organs working together to perform complex functions</li>
+                <li>Organism level: The entire human body as a functioning unit</li>
+            </ol>
+            <div class="image-container">
+                <img src="https://example.com/images/levels-of-organization.jpg" alt="Levels of Anatomical Organization" />
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="new_title">Anatomical Terminology</h2>
+            <p>Understanding anatomical terminology is crucial for describing the human body accurately:</p>
+            <ul>
+                <li>Directional terms: Superior, inferior, anterior, posterior, medial, lateral</li>
+                <li>Body planes: Sagittal, coronal, transverse</li>
+                <li>Body cavities: Cranial, thoracic, abdominal, pelvic</li>
+                <li>Anatomical positions: Supine, prone, anatomical position</li>
+            </ul>
+            <div class="image-container">
+                <img src="https://example.com/images/anatomical-terminology.jpg" alt="Anatomical Terminology Illustration" />
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Gada Olana. All rights reserved.</p>
+    <footer class="site-footer">
+        <p class="copyright">&copy; 2024 Gada Olana. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
