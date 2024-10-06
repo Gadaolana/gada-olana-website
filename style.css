@@ -1,21 +1,17 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Base styles */
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header and navigation */
+/* Header styles */
 .site-header {
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -26,6 +22,7 @@ body {
     justify-content: center;
     list-style-type: none;
     padding: 1rem 0;
+    margin: 0;
 }
 
 .main-nav li {
@@ -43,25 +40,20 @@ body {
     color: #858088;
 }
 
-/* Main content */
+/* Main content styles */
 .site-main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
 .hero-section {
-    text-align: center;
-    padding: 4rem 0;
     background-color: #fff;
     border-radius: 8px;
+    padding: 3rem 2rem;
     margin-bottom: 2rem;
-}
-
-.hero-text {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 1rem auto;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .content-section {
@@ -69,31 +61,7 @@ body {
     border-radius: 8px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.fact-list {
-    list-style-type: none;
-    padding-left: 1rem;
-    margin-top: 1rem;
-}
-
-.fact-list li::before {
-    content: "•";
-    color: #858088;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-/* Footer */
-.site-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Typography */
@@ -106,11 +74,32 @@ body {
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-top: 0;
 }
 
-p {
-    margin-bottom: 1rem;
+.hero-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1rem auto;
+}
+
+/* List styles */
+ul {
+    padding-left: 1.5rem;
+}
+
+/* Footer styles */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive design */
@@ -126,5 +115,9 @@ p {
 
     .new_title {
         font-size: 2rem;
+    }
+
+    .site-main {
+        padding: 0 1rem;
     }
 }
