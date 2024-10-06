@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Contact Us - Exploring Human Biology</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="animated-button">Home</a></li>
-                <li><a href="anatomy.html" class="animated-button">Anatomy</a></li>
-                <li><a href="physiology.html" class="animated-button">Physiology</a></li>
-                <li><a href="genetics.html" class="animated-button">Genetics</a></li>
-                <li><a href="contact.html" class="animated-button">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <!-- Same navigation as in index.html -->
     </header>
 
-    <main>
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <form action="send_email.php" method="post">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit" class="animated-button pulse">Send</button>
-            </form>
+    <main class="site-main">
+        <section id="contact" class="content-section">
+            <h2>Contact Us</h2>
+            <p>Have questions about human biology? Reach out to us at info@humanbiologyexplorer.com</p>
+            <div class="image-container">
+                <img src="path/to/contact-image.jpg" alt="Contact Illustration" />
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Gada Olana. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2024 Human Biology Explorer. All rights reserved.</p>
     </footer>
 </body>
 </html>
