@@ -1,72 +1,130 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    color: #333;
     background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
+/* Header and navigation */
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
     padding: 1rem 0;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+.main-nav li {
+    margin: 0 1rem;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+.main-nav a {
     text-decoration: none;
-    font-weight: bold;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-main {
+.main-nav a:hover {
+    color: #858088;
+}
+
+/* Main content */
+.site-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    font-size: 1.2rem;
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 20px;
+    margin: 1rem auto;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    color: #000000;
-    font-size: 2.5rem;
+.content-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.fact-list {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
 
-.new_title {
-    font-family: 'Playfair Display', serif;
-    color: #050306;
-    font-size: 2.5rem;
+.fact-list li::before {
+    content: "•";
+    color: #858088;
     font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
+/* Footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
 
+/* Typography */
 .new_title {
     font-family: 'Playfair Display', serif;
     color: #858088;
     font-size: 2.5rem;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.animated-button:hover {
-    background-color: #0056b3;
+h2 {
+    margin-bottom: 1rem;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+p {
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 0.5rem 0;
+    }
+
+    .new_title {
+        font-size: 2rem;
+    }
 }
