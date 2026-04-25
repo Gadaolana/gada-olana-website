@@ -1,109 +1,157 @@
-/* Reset default styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f8fc;
+    --card: #ffffff;
+    --text: #1d2433;
+    --muted: #5f6b85;
+    --brand: #1d6fe3;
+    --brand-dark: #0f4fb1;
+    --border: #d8e1ef;
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 35%);
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
 }
 
-.site-header {
-    background-color: #1565c0;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.container {
+    width: min(960px, 92%);
+    margin: 0 auto;
 }
 
-.main-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-.main-nav ul li {
-    margin: 0 1rem;
-}
-
-.main-nav ul li a {
+.topbar {
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
     color: #fff;
+    padding: 3rem 0;
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.eyebrow {
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    margin: 0.35rem 0;
+}
+
+.rating span {
+    opacity: 0.9;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--brand-dark);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s ease;
 }
 
-.main-nav ul li a:hover {
-    color: #ffeb3b;
+main {
+    padding: 2rem 0 3rem;
 }
 
-.site-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-h1, h2, h3 {
-    font-family: 'Times New Roman', serif;
-    color: #1565c0;
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
     margin-bottom: 1rem;
+    box-shadow: 0 8px 20px rgba(21, 53, 109, 0.06);
 }
 
-p {
-    margin-bottom: 1rem;
+h2 {
+    margin-bottom: 0.7rem;
 }
 
-.hero-section {
-    background-color: #e3f2fd;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+.key-facts,
+.contact-list {
+    margin-top: 0.75rem;
+    padding-left: 1.2rem;
 }
 
-.content-section {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
 }
 
-.image-container {
-    margin: 1rem 0;
+.date-grid > div {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem;
+    background: #f9fbff;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.label {
+    color: var(--muted);
+    font-size: 0.85rem;
 }
 
-.site-footer {
-    background-color: #1565c0;
-    color: #fff;
-    text-align: center;
+.value {
+    font-weight: 700;
+}
+
+.fineprint,
+.muted {
+    margin-top: 0.75rem;
+    color: var(--muted);
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 0.75rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 0.65rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f0f5ff;
+}
+
+a {
+    color: var(--brand-dark);
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    background: #fff;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
     padding: 1rem 0;
-    margin-top: 2rem;
+    flex-wrap: wrap;
 }
-body {
-    background-color: #8B4513; /* A rich brown color */
-}
-
-.site-main {
-    background-color: #f19306; /* A light cream color for contrast */
-}
-
-.hero-section {
-    background-color: #DEB887; /* A lighter brown for the hero section */
-}
-
-.content-section {
-    background-color: #dc820b; /* An antique white for content sections */
-}
-
-.site-footer {
-    background-color: #5D4037; /* A darker brown for the footer */
-}
-
